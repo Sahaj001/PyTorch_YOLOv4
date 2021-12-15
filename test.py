@@ -160,6 +160,7 @@ def test(data,
 
             # W&B logging
             if plots and len(wandb_images) < log_imgs:
+                pred = int(pred)
                 box_data = [{"position": {"minX": xyxy[0], "minY": xyxy[1], "maxX": xyxy[2], "maxY": xyxy[3]},
                              "class_id": int(cls),
                              "box_caption": "%s %.3f" % (names[cls], conf),
